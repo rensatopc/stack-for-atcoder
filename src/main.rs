@@ -1,7 +1,5 @@
 use std::collections::HashMap;
-use std::fs::File;
-use std::io::{self, Error, Read, Write};
-use std::path::Path;
+use std::io::{self, Write};
 use std::env;
 use std::thread;
 use std::thread::sleep;
@@ -12,14 +10,6 @@ use std::time::SystemTime;
 fn main() {
     let mut executor = Executor::new();
     executor.evaluate_program(get_program());
-}
-
-/// Read string of the file
-fn get_file_contents(name: &Path) -> Result<String, Error> {
-    let mut f = File::open(name)?;
-    let mut contents = String::new();
-    f.read_to_string(&mut contents)?;
-    Ok(contents)
 }
 
 /// Get standard input
