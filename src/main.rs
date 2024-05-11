@@ -1052,5 +1052,5 @@ impl Executor {
 
 
 fn get_program() -> String {
-    String::from("")
+    String::from("Write here!")
 }
